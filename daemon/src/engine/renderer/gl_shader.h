@@ -39,13 +39,6 @@ public:
 	ShaderException(const char* msg) : std::runtime_error(msg) { }
 };
 
-enum class ShaderKind
-{
-	Unknown,
-	BuiltIn,
-	External
-};
-
 struct GLShaderHeader
 {
 	unsigned int version;
@@ -2992,10 +2985,6 @@ public:
 	void SetShaderProgramUniforms( shaderProgram_t *shaderProgram );
 	void BuildShaderFragmentLibNames( std::string& fragmentInlines );
 };
-
-std::string GetShaderPath();
-
-extern ShaderKind shaderKind;
 
 extern GLShader_generic                         *gl_genericShader;
 extern GLShader_lightMapping                    *gl_lightMappingShader;
